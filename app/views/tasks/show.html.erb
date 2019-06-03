@@ -1,0 +1,29 @@
+
+<h1>
+  <%= @task.title %>
+  <button>
+    <%= link_to "Edit this task", edit_task_path %>
+  </button>
+</h1>
+
+<div class="my-box">
+      <p class="desc"><%= @task.details %></p>
+</div>
+
+<% if @task.completed %>
+  <p>
+    <%= check_box("tag", tag.id, {checked: @task.completed}) %>
+    This task is completed
+  </p>
+<% else @task.completed %>
+  <p>
+    <%= check_box("tag", tag.id, {checked: @task.completed}) %>
+    This task is not completed yet
+  </p>
+<% end %>
+
+<%= link_to "Back to list", tasks_path %>
+
+
+
+
